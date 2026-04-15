@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = new GoogleGenerativeAI( "AIzaSyDrrABRroUJfyh3W9nuG43DPMdDcKke14c");
+const API_KEY = new GoogleGenerativeAI( "");
 
 const ImageAnalyzer = () => {
   const [image, setImage] = useState(null);
