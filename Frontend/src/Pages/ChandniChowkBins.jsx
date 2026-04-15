@@ -25,15 +25,24 @@ const ChandniChowkBins = () => {
     try {
       const response = await fetch("http://127.0.0.1:3000/data");
       const data = await response.json();
-      const newDistance = parseInt(data.distance, 10) || 0;
-      setDistance(newDistance);
+      
+      // Extract numeric distance from "5.3 | Location: ..." format
+      let distanceValue = 0;
+      if (typeof data.distance === 'string') {
+        const match = data.distance.match(/[\d.]+/);
+        distanceValue = match ? parseFloat(match[0]) : 0;
+      } else {
+        distanceValue = parseFloat(data.distance) || 0;
+      }
+      
+      setDistance(distanceValue);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
   useEffect(() => {
     fetchDistance();
-    const interval = setInterval(fetchDistance, 200);
+    const interval = setInterval(fetchDistance, 500);
 
     return () => clearInterval(interval);
   }, []);

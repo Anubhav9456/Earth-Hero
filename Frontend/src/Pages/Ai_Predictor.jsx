@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = new GoogleGenerativeAI( "AIzaSyBGDyTHvxNpch47PNBkTpKvYL_W_GKWFw0");
+const API_KEY = new GoogleGenerativeAI( "AIzaSyDrrABRroUJfyh3W9nuG43DPMdDcKke14c");
 
 const ImageAnalyzer = () => {
   const [image, setImage] = useState(null);
@@ -29,9 +29,9 @@ const ImageAnalyzer = () => {
       const base64Image = reader.result.split(",")[1];
 
       try {
-        const genAI = new GoogleGenerativeAI("AIzaSyBGDyTHvxNpch47PNBkTpKvYL_W_GKWFw0");
+        const genAI = new GoogleGenerativeAI("AIzaSyDrrABRroUJfyh3W9nuG43DPMdDcKke14c");
         const model = await genAI.getGenerativeModel({
-          model: "gemini-2.0-flash",
+          model: "gemini-3-flash-preview",
         });
 
         const result = await model.generateContent([

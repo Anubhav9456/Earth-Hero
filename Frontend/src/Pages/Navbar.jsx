@@ -13,7 +13,7 @@ function Navbar() {
           <svg className="h-8 w-8 text-[#81C784]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h11l4-4m0 8l-4-4H3m3 4h5" />
           </svg>
-          EcoSphere
+          Earth-Hero
         </Link>
 
         {/* Desktop Navigation */}

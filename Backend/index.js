@@ -6,7 +6,7 @@ const axios = require("axios");
 const http = require("http");
 
 const PORT = 3000;
-const ARDUINO_PORT = "COM3"; 
+const ARDUINO_PORT = "COM7"; 
 const BAUD_RATE = 9600;
 
 const app = express();
